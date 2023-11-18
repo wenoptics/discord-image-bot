@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "discord-image-bot"
+version = "0.1.0"
+description = ""
+authors = ["wenop <wenoptics@gmail.com>"]
+readme = "README.md"
+packages = [
+    { include = "dib" }
+]
+
+[tool.poetry.scripts]
+dib = "dib.__main__:cli"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+httpx = "^0.25.1"
+discordwebhook-py = "^1.1.2"
+aiohttp = "^3.9.0"
+pydantic = "^2.5.1"
+croniter = "^2.0.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
