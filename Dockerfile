@@ -58,4 +58,9 @@ FROM python-base as production
 ENV FASTAPI_ENV=production
 COPY --from=builder-base $PYSETUP_PATH $PYSETUP_PATH
 
-ENTRYPOINT ["dib"]
+COPY . /app
+WORKDIR /app
+
+RUN pip install .
+
+ENTRYPOINT ["python", "dib/__main__.py"]

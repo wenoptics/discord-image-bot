@@ -1,0 +1,25 @@
+version: '3.1'
+
+# Example usage
+services:
+  mountaincam-7s:
+    image: wenoptics/discord-image-bot:0.1.0
+    command:
+      - --discord_webhook_url
+      - https://discord.com/api/webhooks/<your-secret>/<your-secret-token>
+      - --image_url
+      - https://live8p.brownrice.com/cam-images/sevensprings.jpg
+      # Every 45 minutes
+      - --cron
+      - '*/45 * * * *'
+
+  mountaincam-boycepark:
+    image: wenoptics/discord-image-bot:0.1.0
+    command:
+      - --discord_webhook_url
+      - https://discord.com/api/webhooks/<your-secret>/<your-secret-token>
+      - --image_url
+      - https://b7.hdrelay.com/camera/14ced094-b906-401c-bd83-06dc36f4c2db/snapshot
+      # Every 45 minutes
+      - --cron
+      - '*/45 * * * *'
