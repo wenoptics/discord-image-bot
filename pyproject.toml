@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "discord-image-bot"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["wenop <wenoptics@gmail.com>"]
 readme = "README.md"

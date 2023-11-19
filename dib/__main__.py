@@ -34,7 +34,12 @@ async def on_cron(config: Config):
 def main(config: Config):
     cron = croniter(config.cron)
 
+    logger.info('Starting the cron job. Now is {}'.format(datetime.datetime.now()))
+
     async def _run():
+        # Run at the start
+        await on_cron(config)
+
         # Schedule the cron job
         while True:
             next_time = cron.get_next(ret_type=float)
@@ -53,7 +58,7 @@ def main(config: Config):
 
 
 def cli():
-    logging.basicConfig(level=logging.DEBUG)
+    logger.setLevel(logging.DEBUG)
 
     import argparse
     parser = argparse.ArgumentParser()

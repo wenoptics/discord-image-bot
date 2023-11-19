@@ -1,9 +1,11 @@
 version: '3.1'
 
-# Example usage
 services:
   mountaincam-7s:
-    image: wenoptics/discord-image-bot:0.1.0
+    # Build from source
+    build: .
+    # Or use the pre-build
+    # image: wenoptics/discord-image-bot:latest
     command:
       - --discord_webhook_url
       - https://discord.com/api/webhooks/<your-secret>/<your-secret-token>
@@ -14,7 +16,10 @@ services:
       - '*/45 * * * *'
 
   mountaincam-boycepark:
-    image: wenoptics/discord-image-bot:0.1.0
+    # Build from source
+    build: .
+    # Or use the pre-build
+    # image: wenoptics/discord-image-bot:latest
     command:
       - --discord_webhook_url
       - https://discord.com/api/webhooks/<your-secret>/<your-secret-token>

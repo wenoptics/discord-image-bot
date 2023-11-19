@@ -38,7 +38,7 @@ Docker compose usage example:
 version: "3.8"
 services:
   mountaincam-7s-bot:
-    image: wenoptics/discord-image-bot:0.1.0
+    image: wenoptics/discord-image-bot:latest
     command:
       - --discord_webhook_url
       - https://discord.com/api/webhooks/<your-secret>/<your-secret-token>
